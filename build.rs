@@ -88,6 +88,7 @@ mod unix_platform {
             .args(&["--disable-shared", "--enable-static"]) // Only build static lib
             .args(&["--prefix", out_dir.to_str().unwrap()]) // Install on the outdir
             .arg("--with-pic") // Build position-independent code (required by Rust)
+            .args(&["--target", "arm-unknown-linux-gnueabihf"]) // enable cross-compilation mode
             .output()
             .unwrap();
 
